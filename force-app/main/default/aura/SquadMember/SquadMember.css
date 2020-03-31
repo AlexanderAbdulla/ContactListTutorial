@@ -1,2 +1,7 @@
-.THIS {
+.THIS.squadMemberSection{
+    border-bottom: 4em;
+}
+
+.THIS.heroImageWrapper {
+    margin-right: 5px !important;
 }

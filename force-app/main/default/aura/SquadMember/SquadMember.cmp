@@ -4,6 +4,14 @@
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     
     <aura:iteration items="{!v.squadMembers}" var="squadMember">
-        <p>Name: {!squadMember.Name} Title: {!squadMember.Title} </p>
+        <div class="squadMemberSection">
+            <div class="uiOutputRichText heroImageWrapper" style="width: 2em; height:2em; float:left; margin-right:5px">       
+                <ui:outputRichText value="{!squadMember.image__c}"/>
+            </div>
+            <div class="squadMemberDetails">
+                <a href="google.com"> {!squadMember.Name}</a> 
+                <p> * {!squadMember.Title}</p>
+            </div>
+        </div>
     </aura:iteration>
 </aura:component>	
