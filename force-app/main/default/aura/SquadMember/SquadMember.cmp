@@ -9,7 +9,7 @@
                 <ui:outputRichText value="{!squadMember.image__c}"/>
             </div>
             <div class="squadMemberDetails">
-                <a href="google.com"> {!squadMember.Name}</a> 
+                <a href="{! 'https://alexompany-dev-ed.lightning.force.com/lightning/r/Contact/' + squadMember.Id  + '/view'}"> {!squadMember.Name}</a> 
                 <p> * {!squadMember.Title}</p>
             </div>
         </div>
