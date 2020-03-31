@@ -1,5 +1,7 @@
 <aura:component controller="ContactListController">
     <aura:attribute name="accounts" type="Account[]"/>
+    <aura:attribute name="squadMembers" type="Squad_Member__c[]"/>
+
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
 
         <lightning:accordion aura:id="accordion" activeSectionName="B">
@@ -8,7 +10,8 @@
                 <!-- foreach account-->
                 <lightning:accordionSection name="{!account.Name}" label="{!account.Name}">
                     <aura:set attribute="body">
-                        <p>This is the content area for section A.</p>
+                        <c:SquadMember selectedAccount="{!account.Id}"/>
+                        <p>test</p>
                     </aura:set>
                 </lightning:accordionSection>
                 <!-- foreach account-->
@@ -16,5 +19,4 @@
             </aura:iteration>
 
         </lightning:accordion>
-        
 </aura:component>	
