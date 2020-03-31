@@ -1,0 +1,20 @@
+<aura:component controller="ContactListController">
+    <aura:attribute name="accounts" type="Account[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+        <lightning:accordion aura:id="accordion" activeSectionName="B">
+           
+            <aura:iteration items="{!v.accounts}" var="account">
+                <!-- foreach account-->
+                <lightning:accordionSection name="{!account.Name}" label="{!account.Name}">
+                    <aura:set attribute="body">
+                        <p>This is the content area for section A.</p>
+                    </aura:set>
+                </lightning:accordionSection>
+                <!-- foreach account-->
+
+            </aura:iteration>
+
+        </lightning:accordion>
+        
+</aura:component>	
