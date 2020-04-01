@@ -4,6 +4,26 @@
 
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
 
+    <div class="slds-page-header">
+        <div class="slds-page-header__row">
+          <div class="slds-page-header__col-title">
+            <div class="slds-media" >
+                <lightning:icon iconName="custom:custom73" alternativeText="Account" title="Account" />
+              <div class="slds-media__body" style="padding-left: 5px;">
+                <div class="slds-page-header__name">
+                  <div class="slds-page-header__name-title">
+                    <h1>
+                      <span class="slds-page-header__title slds-truncate" title="Superhero Squads">Superhero Squads</span>
+                    </h1>
+                  </div>
+                </div>
+                <p class="slds-page-header__name-meta">Alex Abdulla • The Big Boss</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
         <lightning:accordion aura:id="accordion" activeSectionName="B">
            
             <aura:iteration items="{!v.accounts}" var="account">
