@@ -2,8 +2,7 @@ public with sharing class ContactListController {
 
     @AuraEnabled
     public static List<Account> getAllSquadAccounts(){
-        //Id IN (SELECT Parent__c FROM Child__c)
-        return [SELECT id, name FROM Account WHERE id IN (SELECT Account__c FROM Squad_Member__c)];
+       return [SELECT id, name FROM Account WHERE id IN (SELECT Account__c FROM Squad_Member__c)];
     }
 
     @AuraEnabled
@@ -13,11 +12,7 @@ public with sharing class ContactListController {
 
     @AuraEnabled
     public static String getAccountValidation(String contactId){
-        /*
-        only 1 account, display an info toast message, "<Name of Member> belongs to only 1 account."
-        to 2 accounts, display an info toast message, "<Name of Member> belongs to multiple accounts."
-        more than 2 accounts, display an error toast message, "<Name of Member> belongs to a high # of accounts.
-         Please validate with admin."*/
+
         Integer count = [SELECT COUNT() FROM Squad_Member__c WHERE Contact__c = :contactId];
         String accountValidation = 'Oh boy, if you are seeing this Alex made an Apex error';
 
