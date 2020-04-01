@@ -1,4 +1,5 @@
 <aura:component controller="ContactListController">
+    <aura:registerEvent name="showToast" type="force:showToast" />
     <aura:attribute name="squadMembers" type="Contact[]"/>
     <aura:attribute name="selectedAccount" type="String"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
@@ -10,7 +11,10 @@
             </div>
             <div class="squadMemberDetails">
                 <a href="{! 'https://alexompany-dev-ed.lightning.force.com/lightning/r/Contact/' + squadMember.Id  + '/view'}"> {!squadMember.Name}</a> 
-                <p> * {!squadMember.Title}</p>
+                <p>
+                    <lightning:button label="{!squadMember.Id}" title="Validate Count" onclick="{! c.validateAccounts }" class="slds-m-left_x-small">Validate</lightning:button>
+                    * {!squadMember.Title}
+                </p>
             </div>
         </div>
     </aura:iteration>
